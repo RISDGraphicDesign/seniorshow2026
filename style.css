@@ -1,0 +1,51 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  
+}
+
+@font-face {
+  font-family: 'SundayMasthead';
+  src: url('SundayMasthead-Regular.otf') format('opentype');
+}
+
+#text-above, #text-below {
+  text-align: center;
+  font-family: 'SundayMasthead', sans-serif;
+  font-size: 120px;
+
+}
+
+#text-above p, #text-below p {
+  margin: 0;
+  line-height: 1;
+}
+
+.letter {
+  color: #999999;
+    padding:0px;
+     
+}
+
+.letter.collected {
+  color: #000000;
+    padding:0px;
+}
+
+canvas {
+    padding:0px;
+  display: block;
+ 
+
+}
