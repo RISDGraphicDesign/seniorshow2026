@@ -1,6 +1,8 @@
 let canvasWidth = window.innerWidth * 0.6;
 let canvasHeight = window.innerHeight * 0.4;
 
+let started = false;
+
 let foxImage;
 let foxX;
 let foxY;
@@ -42,7 +44,7 @@ function preload() {
   sundayMasthead = loadFont("fonts/SundayMasthead-Regular.otf");
 }
 
-function setup() {
+function setup() {  
   let canvas = createCanvas(canvasWidth, canvasHeight);
   canvas.parent('canvas-container');
   frameRate(60);
@@ -79,7 +81,8 @@ function setup() {
 
 
 function draw() {
- 
+  if (!started) return;
+
   background(pink);
   stroke(navy);
   strokeWeight(3);

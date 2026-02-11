@@ -2,7 +2,8 @@ let landing = document.querySelector("#landing");
 
 landing.addEventListener("click", () => {
     landing.remove();
-    document.body.innerHTML += '<script src="game.js"></script>';
+    document.querySelector("canvas").style.display = "block";
+    started = true;
 });
 
 // resize vh for mobile
