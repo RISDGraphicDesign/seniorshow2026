@@ -1,5 +1,5 @@
-let canvasWidth = 1000;
-let canvasHeight = 600;
+let canvasWidth = window.innerWidth * 0.6;
+let canvasHeight = window.innerHeight * 0.4;
 
 let foxImage;
 let foxX;
@@ -24,6 +24,9 @@ let gameRun = true;
 let letters = [];
 let sundayMasthead;
 
+let navy = "#0D2D72";
+let pink = "#FFE7EB";
+
 // Background floating letters
 let bgLetters = {};
 let pangramLetters = "THEQUICKBROWNFOXJUMPSOVERTHELAZYDOG";  // Unique letters only
@@ -31,12 +34,14 @@ let pangramLetters = "THEQUICKBROWNFOXJUMPSOVERTHELAZYDOG";  // Unique letters o
 // Game over rect animation
 let gameOverRectY;
 let gameOverRectTargetY;
+
 function preload() {
   foxImage = loadImage("assets/fox.png");
   dogImage = loadImage("assets/lazydog.png");
 
-  sundayMasthead = loadFont("SundayMasthead-Regular.otf");
+  sundayMasthead = loadFont("fonts/SundayMasthead-Regular.otf");
 }
+
 function setup() {
   let canvas = createCanvas(canvasWidth, canvasHeight);
   canvas.parent('canvas-container');
@@ -75,8 +80,11 @@ function setup() {
 
 function draw() {
  
-  background(255);
-  line(0,canvasHeight, canvasWidth, canvasHeight);
+  background(pink);
+  stroke(navy);
+  strokeWeight(3);
+  line(0, canvasHeight, canvasWidth, canvasHeight);
+  noStroke();
   frameCount++;
 
   // Draw and update background letters during gameplay
@@ -103,7 +111,7 @@ function draw() {
     else{
       gravity = coreGravity;
     }
-}else{
+} else {
   speed = 0;
   gameOver();
 }
@@ -153,13 +161,14 @@ function detectCollision(a, b) {
          a.y < b.y + b.height-shrink && 
         a.y + a.height > b.y+shrink;
 }
+
 function setLetters(){
   let message = "GAME OVER";
  
   let totalWidth = 0;
 
   // Measure total width first
-  fill(0);
+  fill(navy);
   textSize(24);
   for (let i = 0; i < message.length; i++) {
     totalWidth += textWidth(message[i]);
@@ -188,15 +197,7 @@ function setLetters(){
     currentX += letterWidth;  // Move to next letter positi
   }
 }
-function gameOver(){
-  // Animate rect flying up from bottom
-  gameOverRectY = lerp(gameOverRectY, gameOverRectTargetY, 0.08);
-  
-  fill(255);
-  let rectWidth = 180;
-  let rectHeight = 240;
-  rect(canvasWidth/2-rectWidth/2, gameOverRectY-rectHeight/2, rectWidth, rectHeight);
-  fill(0);
+function gameOver() {
   textSize(24);
   textFont(sundayMasthead);
   textAlign(CENTER, CENTER);
@@ -298,12 +299,8 @@ function updateBgLetters() {
       continue;
     }
     
-    // Draw letter - animate color between #C88996 and #0D2D72
-    let color1 = color(200, 137, 150);  // #C88996
-    let color2 = color(13, 45, 114);    // #0D2D72
-    let t = (sin(frameCount * 0.15 + l.x * 0.01) + 1) / 2;  // Oscillate 0-1
-    let letterColor = lerpColor(color1, color2, t);
-    fill(letterColor);
+    // Draw letter
+    fill(navy);
     textSize(l.size);
     text(l.char, l.x, l.y);
     
@@ -362,4 +359,10 @@ function generateRandomWavyPath(endX, endY, numPoints = 8) {
   }
   
   return path;
+}
+
+function windowResized() {
+  canvasWidth = window.innerWidth * 0.6;
+  canvasHeight = window.innerHeight * 0.4;
+  resizeCanvas(canvasWidth, canvasHeight);
 }
