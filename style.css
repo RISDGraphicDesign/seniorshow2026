@@ -18,7 +18,7 @@
 :root {
   --background-color: #FFE7EB;
   --text-color: #0A2B75;
-  --text-color-inactive: #BEBEBE;
+  --text-inactive: 40%;
 }
 
 body {
@@ -63,12 +63,21 @@ body {
   font-size: 1.1rem;
 }
 
-.letter {
-  color: var(--text-color-inactive);
-  padding: 0px;    
+.text {
+  font-family: 'Plus Jakarta Sans', Arial, sans-serif;
+}
+
+.link {
+  cursor: pointer;
+}
+
+.letter, .link:hover {
+  color: var(--text-color);
+  opacity: var(--text-inactive);  
 }
 
 .letter-static, .letter.collected {
+  opacity: 100%;
   color: var(--text-color);
   padding: 0px;
 }
@@ -81,7 +90,7 @@ body {
   width: 100%;
 }
 
-#landing {
+#play {
   cursor: pointer;
 }
 
