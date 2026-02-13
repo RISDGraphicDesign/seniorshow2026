@@ -1,8 +1,14 @@
+let play = document.querySelector("#play");
 let landing = document.querySelector("#landing");
 
-landing.addEventListener("click", () => {
+play.addEventListener("click", () => {
     landing.remove();
     document.querySelector("canvas").style.display = "block";
+    let letters = document.querySelectorAll(".letter-static");
+    letters.forEach(letter => {
+        letter.classList.remove("letter-static");
+        letter.classList.add("letter");
+    });
     started = true;
 });
 
