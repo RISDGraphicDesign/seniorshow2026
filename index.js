@@ -1,5 +1,5 @@
 // resize vh for mobile
-mobileResize();
+/* mobileResize();
 
 function mobileResize() {
     let vh = window.innerHeight * 0.01;
@@ -8,7 +8,7 @@ function mobileResize() {
 
 window.addEventListener("resize", () => {
     mobileResize();
-});
+}); */
 
 
 // initiate game
