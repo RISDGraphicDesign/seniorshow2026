@@ -30,6 +30,31 @@ body {
   background-color: var(--background-color);
 }
 
+.title {
+  font-family: 'SundayMasthead', sans-serif;
+  font-size: 6rem;
+}
+
+.subtitle {
+  font-family: 'Cutive Mono', Courier, monospace;
+  color: var(--text-color);
+  font-size: 1.1rem;
+}
+
+.text {
+  font-family: 'Plus Jakarta Sans', Arial, sans-serif;
+}
+
+.link {
+  cursor: pointer;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+/*title and landing*/
+
 .text-top, .text-bottom, .text-center {
   color: var(--text-color);
   line-height: 1;
@@ -55,25 +80,6 @@ body {
 
 .title-bottom {
   padding-bottom: 1.5rem;
-}
-
-.title {
-  font-family: 'SundayMasthead', sans-serif;
-  font-size: 6rem;
-}
-
-.subtitle {
-  font-family: 'Cutive Mono', Courier, monospace;
-  color: var(--text-color);
-  font-size: 1.1rem;
-}
-
-.text {
-  font-family: 'Plus Jakarta Sans', Arial, sans-serif;
-}
-
-.link {
-  cursor: pointer;
 }
 
 .letter, .link:hover {
@@ -102,6 +108,21 @@ body {
 canvas {
   padding: 0px;
   display: none;
+}
+
+.statement {
+  color: var(--text-color);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 0 3rem;
+}
+
+.statement p {
+  width: 90%;
+  max-width: 1000px;
 }
 
 @media(max-width: 1000px) {
