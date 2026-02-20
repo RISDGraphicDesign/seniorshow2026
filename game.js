@@ -194,7 +194,7 @@ function draw() {
   fill(navy);
   noStroke();
   textFont(sundayMasthead);
-  textSize(gameHeight * 0.35);
+  textSize(gameHeight * 0.3);
   textAlign(CENTER, CENTER);
   if (timeLeft > 0 && !goPhase) {
     text(timeLeft, canvasWidth / 2, gameBaseline - gameHeight * 0.45);
@@ -343,6 +343,7 @@ function detectCollision(a, b) {
          a.y < b.y + b.height - scaledShrink && 
          a.y + a.height > b.y + scaledShrink;
 } 
+
 function setLetters(){
   noStroke();
   let message = "GAME OVER";
@@ -380,53 +381,55 @@ function setLetters(){
     currentX += letterWidth;  // Move to next letter positi
   }
 }
+
 function gameOver(){
-  // Animate rect flying up from bottom
-  let gameOverRectTargetY = canvasHeight/2;
+  // // Animate rect flying up from bottom
+  // let gameOverRectTargetY = canvasHeight/2;
   
-  fill(255);
-  let rectWidth = 180;
-  let rectHeight = 240;
+  // fill(255);
+  // let rectWidth = 180;
+  // let rectHeight = 240;
   
   noStroke();
   fill(navy);
-  textSize(gameHeight * 0.07);
+  textSize(gameHeight * 0.1);
   textFont(sundayMasthead);
   textAlign(CENTER, CENTER);
  
+  text("GAME OVER", canvasWidth / 2, gameBaseline / 2 - gameHeight * 0.1);
 
-  for (let i = 0; i < letters.length; i++) {
-  let letter = letters[i];
-  
-  if (!letter.t) letter.t = 0;
-  letter.t = min(letter.t + 0.01, 1);
-  
-  // Ease-out: starts fast, slows down
-  let easedT = 1 - pow(1 - letter.t, 3);
-  
-  let path = letter.path;
-  
-  if (letter.t >= 1) {
-    letter.currentX = letter.targetX;
-    letter.currentY = letter.targetY;
-  } else {
-    let totalSegments = path.length - 1;
-    let currentSegment = floor(easedT * totalSegments);
-    currentSegment = constrain(currentSegment, 0, totalSegments - 1);
+  // for (let i = 0; i < letters.length; i++) {
+  //   let letter = letters[i];
     
-    let segmentT = (easedT * totalSegments) % 1;
+  //   if (!letter.t) letter.t = 0;
+  //   letter.t = min(letter.t + 0.01, 1);
     
-    let i0 = max(currentSegment - 1, 0);
-    let i1 = currentSegment;
-    let i2 = min(currentSegment + 1, path.length - 1);
-    let i3 = min(currentSegment + 2, path.length - 1);
+  //   // Ease-out: starts fast, slows down
+  //   let easedT = 1 - pow(1 - letter.t, 3);
     
-    letter.currentX = curvePoint(path[i0].x, path[i1].x, path[i2].x, path[i3].x, segmentT);
-    letter.currentY = curvePoint(path[i0].y, path[i1].y, path[i2].y, path[i3].y, segmentT);
-  }
+  //   let path = letter.path;
   
-   text(letter.char, letter.currentX, letter.currentY);
-}
+  //   if (letter.t >= 1) {
+  //     letter.currentX = letter.targetX;
+  //     letter.currentY = letter.targetY;
+  //   } else {
+  //     let totalSegments = path.length - 1;
+  //     let currentSegment = floor(easedT * totalSegments);
+  //     currentSegment = constrain(currentSegment, 0, totalSegments - 1);
+      
+  //     let segmentT = (easedT * totalSegments) % 1;
+      
+  //     let i0 = max(currentSegment - 1, 0);
+  //     let i1 = currentSegment;
+  //     let i2 = min(currentSegment + 1, path.length - 1);
+  //     let i3 = min(currentSegment + 2, path.length - 1);
+      
+  //     letter.currentX = curvePoint(path[i0].x, path[i1].x, path[i2].x, path[i3].x, segmentT);
+  //     letter.currentY = curvePoint(path[i0].y, path[i1].y, path[i2].y, path[i3].y, segmentT);
+  //   }
+  
+  //   text(letter.char, letter.currentX, letter.currentY);
+  // }
 
 
   // Display score and play again prompt
