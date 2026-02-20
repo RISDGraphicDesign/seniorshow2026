@@ -519,11 +519,12 @@ function updateBgLetters() {
 }
 
 function touchStarted() {
+  let inCanvas = mouseX >= 0 && mouseX <= canvasWidth && mouseY >= 0 && mouseY <= canvasHeight;
   if (started && gameRun && fox.y === foxY) {
     velocityY = coreVelocityY;
     return false; // prevent scroll ONLY during gameplay
   }
-  if (!gameRun) {
+  if (!gameRun && inCanvas) {
     // Reset game state for countdown
     gameRun = true;
     started = false;
