@@ -12,17 +12,38 @@ window.addEventListener("resize", () => {
 
 
 // initiate game
+window.addEventListener('DOMContentLoaded', function() {
+    let play = document.querySelector("#play");
+    let playMobile = document.querySelector("#play-mobile");
 
-let play = document.querySelector("#play");
-let landing = document.querySelector("#landing");
-
-play.addEventListener("click", () => {
-    landing.remove();
-    document.querySelector("canvas").style.display = "block";
-    let letters = document.querySelectorAll(".letter-static");
-    letters.forEach(letter => {
-        letter.classList.remove("letter-static");
-        letter.classList.add("letter");
+    play.addEventListener("click", () => {
+        play.innerHTML =  "<a href='index.html'>Back to Home</a>";
+        playGame();
     });
-    started = true;
+    
+    playMobile.addEventListener("click", () => {
+        playMobile.innerHTML =  "<a href='index.html'>Back to Home</a>";
+        playGame();
+    });
+
+    function playGame() {
+        countdown = true;
+        countdownStartTime = millis();
+        
+        // Set letters to 40% opacity when game starts
+        document.querySelectorAll('.letter-static').forEach(el => el.classList.add('game-started'));
+        
+        let dogAspectRatio = dogImage.width / dogImage.height;
+        let dogWidth = gifWidth / 3.8;
+        let dogHeight = dogWidth / dogAspectRatio;
+        
+        demoDog = {
+        image: dogImage,
+        x: canvasWidth / 2 - dogWidth/2.8,
+        y: gameBaseline - dogHeight,
+        width: dogWidth,
+        height: dogHeight
+        };
+    }
+
 });

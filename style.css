@@ -28,6 +28,13 @@
 
 body {
   background-color: var(--background-color);
+  width: 100vw;
+  
+}
+
+a {
+  text-decoration: none;
+  color: var(--text-color);
 }
 
 .title {
@@ -55,13 +62,17 @@ p {
 
 /*title and landing*/
 
-.text-top, .text-bottom, .text-center {
+.text-top, .text-bottom, .text-center, .back {
   color: var(--text-color);
   line-height: 1;
   width: 100vw;
   z-index: 10;
   text-align: center;
-  padding: 1.5rem 1.5rem 1.5rem;
+  padding: 1rem 1rem 1rem;
+}
+
+.text-center-mobile {
+  display: none;
 }
 
 .text-top {
@@ -79,7 +90,7 @@ p {
 }
 
 .title-bottom {
-  padding-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
 }
 
 .letter, .link:hover {
@@ -87,13 +98,25 @@ p {
   opacity: var(--text-inactive);  
 }
 
-.letter-static, .letter.collected {
+.letter-static {
   opacity: 100%;
   color: var(--text-color);
   padding: 0px;
 }
 
-#canvas-container, #landing {
+.letter-static.game-started {
+  opacity: 40%;
+}
+
+.letter-static.collected {
+  opacity: 100%;
+  color: var(--text-color);
+  padding: 0px;
+}
+
+
+
+#canvas-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -101,13 +124,38 @@ p {
   width: 100%;
 }
 
+#gif-and-canvas {
+   display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left:0px;
+  padding-right:0px;
+  width: 100%;
+}
+ 
+#gif-and-canvas canvas {
+  width: 100%; /* Both fill their container */
+  height: auto; /* Maintain aspect ratio */
+  display: block;
+  justify-content: center;
+  align-items: center;
+}
+
+
+#placeholder {
+  width: 65%;
+  display: block;
+}
+
 #play {
   cursor: pointer;
+  
 }
 
 canvas {
   padding: 0px;
   display: none;
+  pointer-events: auto;
 }
 
 .statement {
@@ -117,7 +165,7 @@ canvas {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 0 0 3rem;
+  padding: 3rem 0 3rem;
 }
 
 .statement p {
@@ -127,8 +175,21 @@ canvas {
 
 @media(max-width: 1000px) {
 
+  #canvas-container {
+    flex-direction: column;
+  }
+
   .title {
     font-size: 3rem;
+  }
+
+  .text-center {
+    display: none;
+  }
+
+  .text-center-mobile {
+    display: block;
+    z-index: 1000;
   }
 
 }
