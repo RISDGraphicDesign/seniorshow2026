@@ -142,10 +142,11 @@ p {
 }
 
 
-#placeholder{
+#placeholder {
   width: 65%;
   display: block;
 }
+
 #play {
   cursor: pointer;
   
@@ -154,6 +155,7 @@ p {
 canvas {
   padding: 0px;
   display: none;
+  pointer-events: auto;
 }
 
 .statement {

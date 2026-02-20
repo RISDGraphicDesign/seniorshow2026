@@ -519,10 +519,11 @@ function updateBgLetters() {
 }
 
 function touchStarted() {
-  if (gameRun && fox.y == foxY) {
+  if (started && gameRun && fox.y === foxY) {
     velocityY = coreVelocityY;
+    return false; // prevent scroll ONLY during gameplay
   }
-  return false;
+  return true; // allow links & buttons to work
 }
 
 function generateRandomWavyPath(endX, endY, numPoints = 8) {
