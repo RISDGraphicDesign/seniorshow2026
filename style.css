@@ -187,6 +187,7 @@ canvas {
 
   .text-center-mobile {
     display: block;
+    z-index: 1000;
   }
 
 }
