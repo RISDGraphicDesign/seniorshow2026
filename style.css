@@ -28,6 +28,8 @@
 
 body {
   background-color: var(--background-color);
+  width: 100vw;
+  
 }
 
 .title {
@@ -87,11 +89,23 @@ p {
   opacity: var(--text-inactive);  
 }
 
-.letter-static, .letter.collected {
+.letter-static {
   opacity: 100%;
   color: var(--text-color);
   padding: 0px;
 }
+
+.letter-static.game-started {
+  opacity: 40%;
+}
+
+.letter-static.collected {
+  opacity: 100%;
+  color: var(--text-color);
+  padding: 0px;
+}
+
+
 
 #canvas-container, #landing {
   display: flex;
@@ -101,8 +115,39 @@ p {
   width: 100%;
 }
 
+@media(max-width: 1000px) {
+
+  #canvas-container {
+    flex-direction: column;
+  }
+
+}
+
+#gif-and-canvas {
+   display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left:0px;
+  padding-right:0px;
+  width: 100%;
+}
+ 
+#gif-and-canvas canvas {
+  width: 100%; /* Both fill their container */
+  height: auto; /* Maintain aspect ratio */
+  display: block;
+  justify-content: center;
+  align-items: center;
+}
+
+
+#placeholder{
+  width: 65%;
+  display: block;
+}
 #play {
   cursor: pointer;
+  
 }
 
 canvas {

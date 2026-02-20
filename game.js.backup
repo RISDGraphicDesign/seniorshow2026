@@ -6,7 +6,7 @@ let gifHeight;
 let gameWidth;
 let gameHeight;
 
-let scaledShrink;
+let shrink = 95;
 let gameRun = true;
 let score = 0;
 let letters = [];
@@ -27,9 +27,8 @@ let startGif;
 
 let fox;
 let velocityY = 0;
-let coreGravity;
-let gravity;
-let coreVelocityY;
+let coreGravity = 1.5;
+let gravity = coreGravity;
 
 let targetWidth;
 let targetHeight;
@@ -38,11 +37,13 @@ let gameBaseline;
 
 let dogArray = [];
 let dogImage;
-let speed;
+let speed = 25  ;
 
 let frameCount = 0;
+let shrink = 95;
+let gameRun = true;
+let letters = [];
 let sundayMasthead;
-let plusJakartaSans;
 
 let goPhase = false;
 let goStartTime = 0;
@@ -65,7 +66,6 @@ function preload() {
   dogImage = loadImage("assets/lazydog.png");
   startGif = loadImage("assets/fox-jumping.gif");
   sundayMasthead = loadFont("fonts/SundayMasthead-Regular.otf");
-  plusJakartaSans = loadFont("fonts/PlusJakartaSans-Regular.ttf");
 }
 
 function setup() { 
@@ -80,7 +80,7 @@ targetWidth = containerWidth; // Use 100% of container, not 40% of landing
 aspectRatio = startGif.width / startGif.height;
 targetHeight = targetWidth / aspectRatio;
 
-gifHeight = targetHeight*.65; 
+gifHeight = targetHeight*.65;
 gifWidth = targetWidth*.65;
 
 gameWidth = targetWidth;
@@ -119,14 +119,8 @@ canvas.style('display', 'block');
   y: foxY,
   width: foxWidth,
   height: foxHeight,
-
 };
 
-coreVelocityY = -gameHeight * 0.06;
-coreGravity = gameHeight * 0.004;
-gravity = coreGravity;
-speed = foxWidth * 0.08;
-scaledShrink = foxWidth * 0.1;
   // Initialize all unique letters
   for (let i = 0; i < pangramLetters.length; i++) {
     let char = pangramLetters.charAt(i);
@@ -136,15 +130,12 @@ scaledShrink = foxWidth * 0.1;
       y: 0,
       collected: false,
       onScreen: false,
-      size: gameHeight * 0.15  // Scale with game size
+      size: 52  // Fixed size for all letters
     };
   }
 
 }
 
-function windowResized() {
-  setup();
-}
 
 function draw() {
   if (!started && !countdown) {
@@ -179,12 +170,13 @@ function draw() {
     demoDog.x -= speed;
     image(demoDog.image, demoDog.x, demoDog.y, demoDog.width, demoDog.height);
     // Respawn dog if it goes off screen
+     
   }
  
  if (goPhase) {
   let goElapsed = (millis() - goStartTime) / 1000;
   let foxProgress = map(goElapsed, 0, goDuration, -foxWidth, 0);
-  let jumpArc = -sin(map(goElapsed, 0, goDuration, 0, PI)) * gameHeight * 0.3;
+  let jumpArc = -sin(map(goElapsed, 0, goDuration, 0, PI)) * 100;
   if (foxJumpImage.getCurrentFrame() >= foxJumpImage.numFrames() - 1) {
     foxJumpImage.pause();
   }
@@ -194,10 +186,10 @@ function draw() {
   fill(navy);
   noStroke();
   textFont(sundayMasthead);
-  textSize(gameHeight * 0.35);
+  textSize(120);
   textAlign(CENTER, CENTER);
   if (timeLeft > 0 && !goPhase) {
-    text(timeLeft, canvasWidth / 2, gameBaseline - gameHeight * 0.45);
+    text(timeLeft, canvasWidth / 2, gameBaseline - 150);
   }
     
    if (elapsed >= countdownTimer && !goPhase) {
@@ -210,7 +202,7 @@ function draw() {
     let goAlpha = map(goElapsed, 0, goDuration, 255, 0);
     
     fill(13, 45, 114, goAlpha); // navy with fading alpha
-    text("GO!", canvasWidth / 2, gameBaseline - gameHeight * 0.45);
+    text("GO!", canvasWidth / 2, gameBaseline - 150);
     
     if (goElapsed >= goDuration) {
       countdown = false;
@@ -231,7 +223,7 @@ function draw() {
   background(pink);
 
   stroke(navy);
-  strokeWeight(max(2, gameHeight * 0.012));
+  strokeWeight(4);
   line(0,canvasHeight/2 + gameHeight/2 -2, canvasWidth, canvasHeight/2 + gameHeight/2 -2);
   frameCount++;
   
@@ -272,11 +264,11 @@ function draw() {
   if (gameRun){
     if (keyIsDown(DOWN_ARROW)) {
       console.log("test")
-      gravity = coreGravity;
+      gravity = 3;
     }
     else if ((keyIsDown(UP_ARROW) || keyIsDown(32)) && fox.y == foxY ) {
       console.log("test")
-      velocityY = coreVelocityY;
+      velocityY = -22;
     }
     else{
       gravity = coreGravity;
@@ -301,7 +293,6 @@ function dogStuff(frameCount){
     image(dogArray[i].image, dogArray[i].x, dogArray[i].y, dogArray[i].width, dogArray[i].height);
     
     if (detectCollision(dogArray[i], fox)) {
-      console.log("COLLISION DETECTED");
       if (gameRun) {  // Only if game was running
     gameRun = false;
     gameOverRectY = canvasHeight + 200;  // Start below screen
@@ -332,16 +323,10 @@ function dogStuff(frameCount){
 
 
 function detectCollision(a, b) { 
-  // Debug: log positions when dog is near fox
-  if (a.x < b.x + b.width + 50 && a.x + a.width > b.x - 50) {
-    console.log("Dog:", a.x, a.y, a.width, a.height);
-    console.log("Fox:", b.x, b.y, b.width, b.height);
-    console.log("scaledShrink:", scaledShrink);
-  }
-  return a.x < b.x + b.width - scaledShrink &&
-         a.x + a.width > b.x + scaledShrink &&
-         a.y < b.y + b.height - scaledShrink && 
-         a.y + a.height > b.y + scaledShrink;
+  return a.x< b.x + b.width-shrink &&
+         a.x + a.width > b.x+shrink &&
+         a.y < b.y + b.height-shrink && 
+        a.y + a.height > b.y+shrink;
 } 
 function setLetters(){
   noStroke();
@@ -351,7 +336,7 @@ function setLetters(){
 
   // Measure total width first
   fill(0);
-  textSize(gameHeight * 0.07);
+  textSize(24);
   noStroke();
   for (let i = 0; i < message.length; i++) {
     totalWidth += textWidth(message[i]);
@@ -382,15 +367,15 @@ function setLetters(){
 }
 function gameOver(){
   // Animate rect flying up from bottom
-  let gameOverRectTargetY = canvasHeight/2;
+  gameOverRectY = lerp(gameOverRectY, gameOverRectTargetY, 0.08);
   
   fill(255);
   let rectWidth = 180;
   let rectHeight = 240;
-  
+  rect(canvasWidth/2-rectWidth/2, gameOverRectY-rectHeight/2, rectWidth, rectHeight);
   noStroke();
   fill(navy);
-  textSize(gameHeight * 0.07);
+  textSize(24);
   textFont(sundayMasthead);
   textAlign(CENTER, CENTER);
  
@@ -428,22 +413,17 @@ function gameOver(){
    text(letter.char, letter.currentX, letter.currentY);
 }
 
-
-  // Display score and play again prompt
-  textFont(plusJakartaSans);
-  textSize(gameHeight * 0.05);
+  // Display score below GAME OVER
+  textSize(18);
   fill(navy);
   noStroke();
-  text("SCORE: " + score, canvasWidth / 2, gameBaseline / 2);
-  textSize(gameHeight * 0.05);
-  fill(navy);
-  text("Tap anywhere to play again", canvasWidth / 2, gameBaseline / 2 + gameHeight * 0.06);
+  text("Score: " + score, canvasWidth / 2, gameOverRectY + 80);
 }
 
 
 function updateBgLetters() {
   // Max Y is where the fox can jump to (foxY is ground, velocityY of -35 with gravity 2)
-  let maxJumpHeight = foxY - canvasHeight/4;  // Approximate max jump height
+  let maxJumpHeight = foxY - 80;  // Approximate max jump height
   
   // Spawn new letters half as frequently as dogs (every 120 frames)
   if (frameCount % 120 == 0) {
@@ -490,12 +470,12 @@ function updateBgLetters() {
         fox.y + fox.height > letterHitbox.y) {
       l.onScreen = false;
       // Find first uncollected matching letter span and add 'collected' class
-      let letterSpans = document.querySelectorAll('.letter-static[data-char="' + l.char + '"]:not(.collected)');
-      if (letterSpans.length > 0) { 
+      let letterSpans = document.querySelectorAll('.letter[data-char="' + l.char + '"]:not(.collected)');
+      if (letterSpans.length > 0) {
         letterSpans[0].classList.add('collected');
       }
       // Only mark as fully collected if no more uncollected spans remain
-      let remainingSpans = document.querySelectorAll('.letter-static[data-char="' + l.char + '"]:not(.collected)');
+      let remainingSpans = document.querySelectorAll('.letter[data-char="' + l.char + '"]:not(.collected)');
       if (remainingSpans.length === 0) {
         l.collected = true;
       }
@@ -503,7 +483,11 @@ function updateBgLetters() {
       continue;
     }
     
-    let letterColor = navy;
+    // Draw letter - animate color between #C88996 and #0D2D72
+    let color1 = color(200, 137, 150);  // #C88996
+    let color2 = color(13, 45, 114);    // #0D2D72
+    let t = (sin(frameCount * 0.15 + l.x * 0.01) + 1) / 2;  // Oscillate 0-1
+    let letterColor = lerpColor(color1, color2, t);
     fill(letterColor);
     textSize(l.size);
     text(l.char, l.x, l.y);
@@ -517,7 +501,7 @@ function updateBgLetters() {
 
 function touchStarted() {
   if (gameRun && fox.y == foxY) {
-    velocityY = coreVelocityY;
+    velocityY = -22;
   }
   return false;
 }
@@ -570,67 +554,4 @@ function generateRandomWavyPath(endX, endY, numPoints = 8) {
   }
   
   return path;
-}
-
-function mousePressed() {
-  // Jump on tap/click during gameplay
-  if (gameRun && started && fox.y == foxY) {
-    velocityY = coreVelocityY;
-  }
-  
-  // Tap anywhere to play again when game is over
-  if (!gameRun) {
-    // Reset game state for countdown
-    gameRun = true;
-    started = false;
-    countdown = true;
-    countdownStartTime = millis();
-    goPhase = false;
-    score = 0;
-    dogArray = [];
-    velocityY = 0;
-    letters = [];
-    frameCount = 0;
-    speed = foxWidth * 0.08;
-    
-    // Reset background letters
-    for (let char in bgLetters) {
-      bgLetters[char].collected = false;
-      bgLetters[char].onScreen = false;
-    }
-    
-    // Reset collected letters in HTML and set to 40% opacity
-    document.querySelectorAll('.letter-static').forEach(span => {
-      span.classList.remove('collected');
-      span.classList.add('game-started');
-    });
-    
-    let dogAspectRatio = dogImage.width / dogImage.height;
-    let dogWidth = gifWidth / 3.8;
-    let dogHeight = dogWidth / dogAspectRatio;
-    
-    demoDog = {
-      image: dogImage,
-      x: canvasWidth / 2 - dogWidth/2.8,
-      y: gameBaseline - dogHeight,
-      width: dogWidth,
-      height: dogHeight
-    };
-
-    foxX = 0;
-    foxY = gameBaseline - foxHeight;
-    fox = {
-      image: foxRunImage,
-      x: foxX,
-      y: foxY,
-      width: foxWidth,
-      height: foxHeight,
-    };
-
-    // Restart running animation
-    foxRunImage.play();
-
-    draw();
-    return false;
-  }
 }
