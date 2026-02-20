@@ -22,14 +22,20 @@
 
 :root {
   --background-color: #FFE7EB;
+  --background-color-2: #F7F2F0;
   --text-color: #0A2B75;
   --text-inactive: 40%;
 }
 
-body {
+#background {
   background-color: var(--background-color);
   width: 100vw;
-  
+  min-height: 100vh;
+}
+
+body {
+  background-color: var(--background-color-2);
+  width: 100vw;
 }
 
 a {
@@ -37,8 +43,11 @@ a {
   color: var(--text-color);
 }
 
-.title {
+.title, h2 {
   font-family: 'SundayMasthead', sans-serif;
+}
+
+.title {
   font-size: 6rem;
 }
 
@@ -114,7 +123,15 @@ p {
   padding: 0px;
 }
 
+.letter-static.game-started {
+  opacity: 40%;
+}
 
+.letter-static.collected {
+  opacity: 100%;
+  color: var(--text-color);
+  padding: 0px;
+}
 
 #canvas-container {
   display: flex;
@@ -158,20 +175,100 @@ canvas {
   pointer-events: auto;
 }
 
-.statement {
+/* nav {
+  position: fixed;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 3rem;
+  z-index: 1000;
+} */
+
+.statement, .statement img, .grid, nav {
   color: var(--text-color);
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 3rem 0 3rem;
+  padding: 1rem 3rem 3rem;
+}
+
+nav {
+  flex-direction: row;
+  text-align: center;
 }
 
 .statement p {
-  width: 90%;
+  width: 100%;
   max-width: 1000px;
 }
+
+#icon {
+  width: 150px;
+}
+
+#stack {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+}
+
+.page {
+  position: relative;
+  width: 80%;
+  max-width: 1000px;
+  height: 100px;
+  background-color: var(--background-color);
+  border: 1px var(--text-color) solid;
+  transform: perspective(500px) rotateX(60deg);
+  transition: 0.5s ease;
+  overflow: hidden;
+}
+
+.page:first-child {
+  margin-top: 0;
+}
+
+.page:hover {
+  background-color: var(--text-color);
+  transform: perspective(500px) rotateX(60deg) translateX(100px);
+  cursor: pointer;
+}
+
+.page-container {
+  /* display: none; */
+  z-index: 999;
+  pointer-events: none;
+}
+
+.page-content {
+  padding: 1.5rem;
+  overflow: scroll;
+  max-height: 90vh;
+  width: 30%;
+  background-color: rgb(255, 255, 255, 0.8);
+  border: 1px var(--text-color) solid;
+  color: var(--text-color);
+  pointer-events: all;
+}
+
+.page-content > img, .page-content > svg {
+  margin-bottom: 1rem;
+  float: right;
+}
+
+.name, .year {
+  font-size: 1rem;
+}
+
+.work-description {
+  font-size: 0.8rem;
+}
+
+
 
 @media(max-width: 1000px) {
 
@@ -190,6 +287,10 @@ canvas {
   .text-center-mobile {
     display: block;
     z-index: 1000;
+  }
+
+  .page-content {
+    width: 90%;
   }
 
 }
