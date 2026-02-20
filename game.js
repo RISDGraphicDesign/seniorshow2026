@@ -523,6 +523,60 @@ function touchStarted() {
     velocityY = coreVelocityY;
     return false; // prevent scroll ONLY during gameplay
   }
+  if (!gameRun) {
+    // Reset game state for countdown
+    gameRun = true;
+    started = false;
+    countdown = true;
+    countdownStartTime = millis();
+    goPhase = false;
+    score = 0;
+    dogArray = [];
+    velocityY = 0;
+    letters = [];
+    frameCount = 0;
+    speed = foxWidth * 0.08;
+    
+    // Reset background letters
+    for (let char in bgLetters) {
+      bgLetters[char].collected = false;
+      bgLetters[char].onScreen = false;
+    }
+    
+    // Reset collected letters in HTML and set to 40% opacity
+    document.querySelectorAll('.letter-static').forEach(span => {
+      span.classList.remove('collected');
+      span.classList.add('game-started');
+    });
+    
+    let dogAspectRatio = dogImage.width / dogImage.height;
+    let dogWidth = gifWidth / 3.8;
+    let dogHeight = dogWidth / dogAspectRatio;
+    
+    demoDog = {
+      image: dogImage,
+      x: canvasWidth / 2 - dogWidth/2.8,
+      y: gameBaseline - dogHeight,
+      width: dogWidth,
+      height: dogHeight
+    };
+
+    foxX = 0;
+    foxY = gameBaseline - foxHeight;
+    fox = {
+      image: foxRunImage,
+      x: foxX,
+      y: foxY,
+      width: foxWidth,
+      height: foxHeight,
+    };
+
+    // Restart running animation
+    foxRunImage.play();
+
+    draw();
+    return false;
+  }
   return true; // allow links & buttons to work
 }
 
