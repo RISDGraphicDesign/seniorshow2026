@@ -79,10 +79,14 @@ let projectInfo = null;
 fetch('project_info.json')
   .then(response => response.json())
   .then(data => {
+    // Fisher-Yates shuffle
+    for (let i = data.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [data[i], data[j]] = [data[j], data[i]];
+    }
     projectInfo = data;
-    init(); // call a function to kick off everything that depends on the data
+    init();
   });
- console.log(currPage);
 
 const preloadCache = new Set();
 
