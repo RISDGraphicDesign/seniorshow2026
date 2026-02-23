@@ -11,8 +11,11 @@ window.addEventListener("resize", () => {
 }); */
 
 
+
 // initiate game
 window.addEventListener('DOMContentLoaded', function() {
+
+
     let play = document.querySelector("#play");
     let playMobile = document.querySelector("#play-mobile");
 
@@ -48,27 +51,3 @@ window.addEventListener('DOMContentLoaded', function() {
 
 });
 
-// load paper stack
-
-let work = document.querySelector("#work");
-let stack = document.querySelector("#stack");
-var page = document.querySelector("#page");
-let workCount = 200;
-let gap = 70;
-
-// stack.style.height = workCount * gap + 200 + "px";
-
-page.style.zIndex = workCount; // to be replaced by total number of works dynamically
-// page.style.top = document.querySelector(".statement").offsetHeight;
-
-
-for (let i = 1; i < workCount; i++) {
-    let clone = page.cloneNode(true);
-    clone.style.zIndex = workCount - i;
-    stack.appendChild(clone);
-    clone.classList.add("page");
-    clone.style.marginTop = "-" + gap + "px";
-    clone.id = i;
-}
-
-let pages = document.querySelectorAll(".page");

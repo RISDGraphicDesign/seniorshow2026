@@ -233,22 +233,46 @@ nav {
 }
 
 .page:hover {
-  background-color: var(--text-color);
+  background-color: color-mix(in srgb, var(--text-color) 40%, var(--background-color));
   transform: perspective(500px) rotateX(60deg) translateX(100px);
   cursor: pointer;
 }
 
+.page-selected{
+   background-color: var(--text-color);
+  transform: perspective(500px) rotateX(60deg) translateX(100px);
+  cursor: pointer;
+  
+}
+
+.hide-page {
+  opacity: 0;
+  display: none;
+ 
+  visibility: hidden;
+  transition: 0.5s ease;
+}
+
+
 .page-container {
-  /* display: none; */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: block;
+  width: 30%;
   z-index: 999;
   pointer-events: none;
+  transition: 0.5s ease;
+ 
 }
+
 
 .page-content {
   padding: 1.5rem;
   overflow: scroll;
   max-height: 90vh;
-  width: 30%;
+  width: 100%;
   background-color: rgb(255, 255, 255, 0.8);
   border: 1px var(--text-color) solid;
   color: var(--text-color);
