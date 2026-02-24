@@ -279,7 +279,7 @@ nav {
   pointer-events: all;
 }
 
-.page-content > img, .page-content > svg {
+.page-content > img, .page-content > video, .page-content > svg {
   margin-bottom: 1rem;
   float: right;
 }
