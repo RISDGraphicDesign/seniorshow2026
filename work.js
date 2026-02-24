@@ -3,7 +3,7 @@
 let work = document.querySelector("#work");
 let stack = document.querySelector("#stack");
 var page = document.querySelector("#page");
-let workCount = 171;
+let workCount = 167;
 let gap = 70;
 
 let hoverpage = document.querySelector(".page-container");
@@ -115,5 +115,6 @@ function init() {
   medium.innerHTML = projectInfo[currPage].medium + ", " + projectInfo[currPage].dimensions;
   description.innerHTML = projectInfo[currPage].description;
   image.src = encodeURI(projectInfo[currPage].files[0] || '');
+  image.onerror = () => { image.src = 'web/placeholder_image.png'; };
   preloadImages(currPage);
 }
