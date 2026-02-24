@@ -71,6 +71,7 @@ let year = document.querySelector(".year");
 let medium = document.querySelector(".work-details");
 let description = document.querySelector(".work-description");
 let image = document.querySelector(".work-image")
+let video = document.querySelector(".work-video");
 let link;
 
 
@@ -114,7 +115,25 @@ function init() {
   year.innerHTML = ", " + projectInfo[currPage].year;
   medium.innerHTML = projectInfo[currPage].medium + ", " + projectInfo[currPage].dimensions;
   description.innerHTML = projectInfo[currPage].description;
-  image.src = encodeURI(projectInfo[currPage].files[0] || '');
+  const src = encodeURI(projectInfo[currPage].files[0] || '');
+const isVideo = /\.(mp4|webm|ogg)$/i.test(src);
+
+if (isVideo) {
+  const posterSrc = src.replace(/\.(mp4|webm|ogg)$/i, '.webp');
+  image.style.display = 'block';
+  image.src = posterSrc;
+  video.style.display = 'none';
+  video.src = src;
+  video.load();
+  video.oncanplay = () => {
+    image.style.display = 'none';
+    video.style.display = 'block';
+  };
+} else {
+  video.style.display = 'none';
+  image.style.display = 'block';
+  image.src = src;
   image.onerror = () => { image.src = 'web/placeholder_image.png'; };
+}
   preloadImages(currPage);
 }
