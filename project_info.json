@@ -55,10 +55,10 @@
     "email": "aheffner@risd.edu",
     "name": "Allie Heffner",
     "pronouns": "She/Her",
-    "instagram": "https://instagram.com/madadamama",
-    "website": "https://allieheffner.com",
+    "instagram": "https://instagram.com/madadamama_",
+    "website": "",
     "work_number": "Work #4",
-    "title": "family reunion",
+    "title": "Family Reunion",
     "source": "documentation",
     "files": [
       "web/AllieHeffner_Work4.webp"
@@ -66,14 +66,14 @@
     "medium": "Sculpture",
     "dimensions": "4.5\" × 7\"",
     "year": "2024",
-    "description": "laser cut on plywood, images from the Internet Archive"
+    "description": "Laser cut image on plywood, sourced from the Internet Archive."
   },
   {
     "email": "aheffner@risd.edu",
     "name": "Allie Heffner",
     "pronouns": "She/Her",
-    "instagram": "https://instagram.com/madadamama",
-    "website": "https://allieheffner.com",
+    "instagram": "https://instagram.com/madadamama_",
+    "website": "",
     "work_number": "Work #5",
     "title": "Happy Birthday",
     "source": "documentation",
@@ -83,14 +83,14 @@
     "medium": "Sculpture",
     "dimensions": "3\" × 4.5\"",
     "year": "2024",
-    "description": "laser cut on plywood, photos from the internet archive"
+    "description": "Laser cut image on plywood, sourced from the Internet Archive."
   },
   {
     "email": "aheffner@risd.edu",
     "name": "Allie Heffner",
     "pronouns": "She/Her",
-    "instagram": "https://instagram.com/madadamama",
-    "website": "https://allieheffner.com",
+    "instagram": "https://instagram.com/madadamama_",
+    "website": "",
     "work_number": "Work #2",
     "title": "Land Reclamation: an expansive guide on how Hong Kong did it",
     "source": "documentation",
@@ -101,16 +101,16 @@
     "medium": "Book",
     "dimensions": "7.5\" × 9\"",
     "year": "2025",
-    "description": "3 in 1 book about the 1997 handover from British to Chinese rule in Hong Kong"
+    "description": "3 in 1 book about the 1997 handover from British to Chinese rule in Hong Kong."
   },
   {
     "email": "aheffner@risd.edu",
     "name": "Allie Heffner",
     "pronouns": "She/Her",
-    "instagram": "https://instagram.com/madadamama",
-    "website": "https://allieheffner.com",
+    "instagram": "https://instagram.com/madadamama_",
+    "website": "",
     "work_number": "Work #5",
-    "title": "Exercise book",
+    "title": "Exercise Book",
     "source": "documentation",
     "files": [
       "web/AllieHeffner_Work5_0.webp"
@@ -118,14 +118,14 @@
     "medium": "Book",
     "dimensions": "6\" × 8\"",
     "year": "2026",
-    "description": "printed images and patterns on linen, a book about patterns and photo patterns"
+    "description": "An exploration of the many forms that patterns can take."
   },
   {
     "email": "aheffner@risd.edu",
     "name": "Allie Heffner",
     "pronouns": "She/Her",
-    "instagram": "https://instagram.com/madadamama",
-    "website": "https://allieheffner.com",
+    "instagram": "https://instagram.com/madadamama_",
+    "website": "",
     "work_number": "Work #6",
     "title": "Untitled",
     "source": "documentation",
@@ -252,7 +252,7 @@
     "title": "From the Soul",
     "source": "documentation",
     "files": [
-      "web/AngelinaKirincic_Work1_p1.webp",
+      "web/AngelinaKirincic_Work1_p1.mp4",
       "web/AngelinaKirincic_Work1_p2.webp",
       "web/AngelinaKirincic_Work1_p3.webp"
     ],
@@ -318,7 +318,7 @@
     "title": "Toronto 2014",
     "source": "resized",
     "files": [
-      "web/AshleyHa_Work3.webp"
+      "web/AshleyHa_Work3.mp4"
     ],
     "medium": "Video",
     "dimensions": "Varied",
@@ -572,7 +572,7 @@
     "title": "Motion Studies",
     "source": "resized",
     "files": [
-      "web/ChahakSurana_Work9_0.webp"
+      "web/ChahakSurana_Work9_0.mp4"
     ],
     "medium": "Video",
     "dimensions": "1080px × 1350px",
@@ -606,7 +606,7 @@
     "title": "Falling Blocks",
     "source": "resized",
     "files": [
-      "web/ChahakSurana_Work10_0.webp"
+      "web/ChahakSurana_Work10_0.mp4"
     ],
     "medium": "Video",
     "dimensions": "Varied",
@@ -623,7 +623,7 @@
     "title": "3D ANIMATION",
     "source": "resized",
     "files": [
-      "web/ChahakSurana_Work4.webp"
+      "web/ChahakSurana_Work4.mp4"
     ],
     "medium": "Video",
     "dimensions": "Varied",
@@ -770,7 +770,9 @@
     "work_number": "Work #1",
     "title": "Ain’t I a woman",
     "source": "documentation",
-    "files": [],
+    "files": [
+        "web/ConstanceBedford_Work1.webp"
+    ],
     "medium": "Multi-Media",
     "dimensions": "Mixed Dimensions",
     "year": "2025",
@@ -786,7 +788,7 @@
     "title": "Seer",
     "source": "resized",
     "files": [
-      "web/EllaGoodman_Work1.webp"
+      "web/EllaGoodman_Work1.mp4"
     ],
     "medium": "Stop Motion Animation",
     "dimensions": "Varied",
@@ -997,10 +999,6 @@
     "title": "WHY WE DON'T FEEL SEXY ANYMORE",
     "source": "documentation",
     "files": [
-      "web/HenieHyewonCho_Work1.mp4",
-      "web/HenieHyewonCho_Work1.mp4",
-      "web/HenieHyewonCho_Work1.mp4",
-      "web/HenieHyewonCho_Work1.mp4",
       "web/HenieHyewonCho_Work1.mp4"
     ],
     "medium": "Book",
@@ -1048,23 +1046,7 @@
     "year": "2025",
     "description": "Image transfer and gesso on wood"
   },
-  {
-    "email": "hcho11@risd.edu",
-    "name": "Henie Hyewon Cho",
-    "pronouns": "she/her",
-    "instagram": "https://instagram.com/henie.jpg",
-    "website": "",
-    "work_number": "Work #4",
-    "title": "About Norigae",
-    "source": "documentation",
-    "files": [
-      "FAILED:1f2NavayaSkV48PdaT57y1jR5zyHgp5qo"
-    ],
-    "medium": "Book",
-    "dimensions": "2\" × 2.5\"",
-    "year": "2023",
-    "description": "The book tells the history of norigae all while being a norigae itself"
-  },
+
   {
     "email": "hcho11@risd.edu",
     "name": "Henie Hyewon Cho",
@@ -1149,7 +1131,7 @@
     "title": "Channa Horwitz",
     "source": "resized",
     "files": [
-      "web/HyunminKim_Work4.webp"
+      "web/HyunminKim_Work4.mp4"
     ],
     "medium": "Website",
     "dimensions": "Varied",
@@ -1241,7 +1223,7 @@
     "title": "Carousel Lyric Video",
     "source": "resized",
     "files": [
-      "web/IzanaNordhaus_Work2.webp"
+      "web/IzanaNordhaus_Work2.mp4"
     ],
     "medium": "Video",
     "dimensions": "1920px × 1080px",
@@ -1274,7 +1256,9 @@
     "work_number": "Work #4",
     "title": "Form In Motion",
     "source": "documentation",
-    "files": [],
+    "files": [
+        "web/IzanaNordhaus_Work4.mp4"
+    ],
     "medium": "Video",
     "dimensions": "1920px × 1080px",
     "year": "2025",
@@ -1346,12 +1330,6 @@
     "title": "Silent Trails",
     "source": "documentation",
     "files": [
-      "web/JaniceLee_Work3_1.mp4",
-      "web/JaniceLee_Work3_1.mp4",
-      "web/JaniceLee_Work3_1.mp4",
-      "web/JaniceLee_Work3_1.mp4",
-      "web/JaniceLee_Work3_1.mp4",
-      "web/JaniceLee_Work3_1.mp4",
       "web/JaniceLee_Work3_1.mp4"
     ],
     "medium": "Website",
@@ -1369,14 +1347,6 @@
     "title": "What Was Once There",
     "source": "documentation",
     "files": [
-      "web/JaniceLeeKayKimRachelShin_Work4_5.mp4",
-      "web/JaniceLeeKayKimRachelShin_Work4_5.mp4",
-      "web/JaniceLeeKayKimRachelShin_Work4_5.mp4",
-      "web/JaniceLeeKayKimRachelShin_Work4_5.mp4",
-      "web/JaniceLeeKayKimRachelShin_Work4_5.mp4",
-      "web/JaniceLeeKayKimRachelShin_Work4_5.mp4",
-      "web/JaniceLeeKayKimRachelShin_Work4_5.mp4",
-      "web/JaniceLeeKayKimRachelShin_Work4_5.mp4",
       "web/JaniceLeeKayKimRachelShin_Work4_5.mp4"
     ],
     "medium": "Exhibition",
@@ -1548,7 +1518,7 @@
     "title": "In the Shadow of Minari",
     "source": "resized",
     "files": [
-      "FAILED_CONVERT:downloads/Katie Hwang - Work 1.jpg"
+      "web/KatieHwang_Work1.webp"
     ],
     "medium": "Book",
     "dimensions": "8\" × 10.5\"",
@@ -1582,7 +1552,7 @@
     "title": "New Optics of Hangul and Typography",
     "source": "resized",
     "files": [
-      "FAILED_CONVERT:downloads/Katie Hwang - Work 4.jpg"
+      "web/KatieHwang_Work4.webp"
     ],
     "medium": "Newspaper",
     "dimensions": "28\" × 16\"",
@@ -1623,14 +1593,6 @@
       "web/KatieHwang,MaggieXian,RachelShin(group)_Work3_3.webp",
       "web/KatieHwang,MaggieXian,RachelShin(group)_Work3_4.webp",
       "web/KatieHwang,MaggieXian,RachelShin(group)_Work3_5.webp",
-      "web/KatieHwangMaggieXianRachelShinGroup_Work3_1.mp4",
-      "web/KatieHwangMaggieXianRachelShinGroup_Work3_2.mp4",
-      "web/KatieHwangMaggieXianRachelShinGroup_Work3_1.mp4",
-      "web/KatieHwangMaggieXianRachelShinGroup_Work3_2.mp4",
-      "web/KatieHwangMaggieXianRachelShinGroup_Work3_1.mp4",
-      "web/KatieHwangMaggieXianRachelShinGroup_Work3_2.mp4",
-      "web/KatieHwangMaggieXianRachelShinGroup_Work3_1.mp4",
-      "web/KatieHwangMaggieXianRachelShinGroup_Work3_2.mp4",
       "web/KatieHwangMaggieXianRachelShinGroup_Work3_1.mp4",
       "web/KatieHwangMaggieXianRachelShinGroup_Work3_2.mp4"
     ],
@@ -1837,7 +1799,9 @@
     "work_number": "Work #1",
     "title": "Digital Space",
     "source": "documentation",
-    "files": [],
+    "files": [
+        "web/KristenSun_Work1.mp4"
+    ],
     "medium": "Video",
     "dimensions": "Varied",
     "year": "2026",
@@ -1924,7 +1888,9 @@
     "work_number": "Work #3",
     "title": "Aesthetic Conversations",
     "source": "documentation",
-    "files": [],
+    "files": [
+        "web/MarieYou_Work3.webp"
+    ],
     "medium": "Book",
     "dimensions": "5.25\" × 7.75\"",
     "year": "2024",
@@ -1956,7 +1922,9 @@
     "work_number": "Work #1",
     "title": "Thoroughfare [I], [II], [III]",
     "source": "documentation",
-    "files": [],
+    "files": [
+        "web/MarieYou_Work6.mp4"
+    ],
     "medium": "Multi-Media",
     "dimensions": "Mixed Dimensions",
     "year": "2024-2025",
@@ -1972,7 +1940,7 @@
     "title": "Zombies Don’t Fall In Love (僵尸没有爱情)",
     "source": "documentation",
     "files": [
-      "FAILED_CONVERT:downloads/Marie You - Work 2.zip"
+      "web/MarieYou_Work2.webp"
     ],
     "medium": "Book",
     "dimensions": "7\" × 5\"",
@@ -2224,7 +2192,7 @@
     "title": "Where’s the Green?",
     "source": "resized",
     "files": [
-      "web/NatalieHo_Work3.webp"
+      "web/NatalieHo_Work3.mp4"
     ],
     "medium": "Video",
     "dimensions": "1920px × 1080px",
@@ -2355,7 +2323,7 @@
     "title": "Victor Wembanyama: [Alien?]",
     "source": "resized",
     "files": [
-      "web/RachelShin_Work3_0.webp"
+      "web/RachelShin_Work3_0.mp4"
     ],
     "medium": "Video",
     "dimensions": "1080px × 1920px",
@@ -2407,7 +2375,7 @@
     "title": "Superstition, Superstition, Superstition",
     "source": "resized",
     "files": [
-      "web/RafaelMediodia_Work4.webp"
+      "web/RafaelMediodia_Work4.mp4"
     ],
     "medium": "Video",
     "dimensions": "1920px × 1080px",
@@ -2441,7 +2409,7 @@
     "title": "Motion Reel",
     "source": "resized",
     "files": [
-      "web/RafaelMediodia_Work3.webp"
+      "web/RafaelMediodia_Work3.mp4"
     ],
     "medium": "Video",
     "dimensions": "1920px × 1080px",
@@ -2472,7 +2440,7 @@
     "work_number": "Work #5",
     "title": "24FPS",
     "source": "documentation",
-    "files": [],
+    "files": ["web/RafaelMediodia_Work5_0.webp"],
     "medium": "Sculpture",
     "dimensions": "14\" × 6\"",
     "year": "2025",
@@ -2487,7 +2455,9 @@
     "work_number": "Work #6",
     "title": "Plus One",
     "source": "documentation",
-    "files": [],
+    "files": [
+        "web/RafaelMediodia_Work6.mp4"
+    ],
     "medium": "Brand Identity",
     "dimensions": "18\" × 24\"",
     "year": "2025",
@@ -2523,7 +2493,7 @@
     "title": "American Dream: Pilot Episode",
     "source": "resized",
     "files": [
-      "web/RafaelMediodia_Work8.webp"
+      "web/RafaelMediodia_Work8.mp4"
     ],
     "medium": "Video",
     "dimensions": "1920px × 1080px",
@@ -2537,9 +2507,9 @@
     "instagram": "https://instagram.com/middledays",
     "website": "https://rafaelmediodia.work",
     "work_number": "Work #8",
-    "title": "Candy Letters",
+    "title": "Gummy Words",
     "source": "documentation",
-    "files": [],
+    "files": ["web/RafaelMediodia_Work8_0.webp"],
     "medium": "Sculpture",
     "dimensions": "7\" × 12\"",
     "year": "2025",
@@ -2551,10 +2521,10 @@
     "pronouns": "he/him",
     "instagram": "https://instagram.com/middledays",
     "website": "https://rafaelmediodia.work",
-    "work_number": "Work #8",
+    "work_number": "Work #9",
     "title": "Input:Output",
     "source": "documentation",
-    "files": [],
+    "files": ["web/RafaelMediodia_Work9.webp"],
     "medium": "Multi-Media",
     "dimensions": "24\" × 36\"",
     "year": "2025",

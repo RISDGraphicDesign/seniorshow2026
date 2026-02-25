@@ -3,10 +3,11 @@
 let work = document.querySelector("#work");
 let stack = document.querySelector(".stack");
 var page = document.querySelector("#page");
-let workCount = 167;
+let workCount = 166;
 let gap = 70;
 let isGrid = false;
 let readyForScroll = false;
+let BOTTOM_BUFFER = 0.001; // fraction of stack scroll to hide hover page before credits (0 = exact edge, higher = earlier)
 let hoverpage = document.querySelector("#the-page");
 let currPage = 0;
 // stack.style.height = workCount * gap + 200 + "px";
@@ -30,17 +31,20 @@ function handleScroll() {
     if (!readyForScroll) return;
     if (isAnimating) return;
     let scrollY = window.scrollY;
-    let docHeight = document.body.scrollHeight - window.innerHeight;
-    scrollFraction = scrollY / docHeight;
+    let creditsEl = document.getElementById('credits');
+    let footerEl = document.querySelector('.footer');
+    let bottomSpace = (creditsEl ? creditsEl.offsetHeight : 0) + (footerEl ? footerEl.offsetHeight : 0);
+    let docHeight = document.body.scrollHeight - window.innerHeight - bottomSpace;
+    scrollFraction = Math.min(scrollY / docHeight, 1);
 
-    if (scrollFraction < 0.05) {
+    if (scrollFraction < 0.05 || scrollFraction >= 1 - BOTTOM_BUFFER) {
         pages.forEach(page => page.classList.remove('page-selected'));
         hoverpage.classList.add('hide-page');
         return;
     }
 
     let adjustedFraction = (scrollFraction - 0.05) / 0.95;
-    let selectedIndex = Math.floor(adjustedFraction * pages.length);
+    let selectedIndex = Math.min(Math.floor(adjustedFraction * pages.length), pages.length - 1);
     
 
     pages.forEach((page, index) => {
@@ -62,7 +66,10 @@ let pages = document.querySelectorAll(".page");
 let selectedIndex = Math.floor(scrollFraction * pages.length);
 pages.forEach((page, index) => {
     page.addEventListener('click', () => {
-        let docHeight = document.body.scrollHeight - window.innerHeight;
+        let creditsEl = document.getElementById('credits');
+        let footerEl = document.querySelector('.footer');
+        let bottomSpace = (creditsEl ? creditsEl.offsetHeight : 0) + (footerEl ? footerEl.offsetHeight : 0);
+        let docHeight = document.body.scrollHeight - window.innerHeight - bottomSpace;
      let targetScroll = (0.05 + ((index + 0.5) / pages.length) * 0.95) * docHeight;
         window.scrollTo({ top: targetScroll, behavior: 'smooth' });
     });
@@ -236,15 +243,23 @@ function buildGrid() {
     const src = encodeURI(project.files && project.files[0] ? project.files[0] : '');
     const isVideo = /\.(mp4|webm|ogg)$/i.test(src);
     const imgSrc = isVideo ? src.replace(/\.(mp4|webm|ogg)$/i, '.webp') : src;
-    const link = project.website || project.instagram || '#';
+    const link = project.website || project.instagram || '';
+    const isGroup = project.name.includes(',');
+    const nameHTML = (link && !isGroup)
+      ? `<a href="${link}" target="_blank" class="link">${project.name} &nbsp; ↗</a>`
+      : project.name;
 
     const card = document.createElement('div');
     card.className = 'grid-page-container';
+    const mediaHTML = isVideo
+      ? `<video src="${src}" poster="${imgSrc}" width="100%" autoplay loop muted playsinline></video>`
+      : `<img src="${imgSrc}" alt="" width="100%" onerror="this.src='web/placeholder_image.png'"/>`;
+
     card.innerHTML = `
       <div class="grid-content">
-        <img src="${imgSrc}" alt="" width="100%" onerror="this.src='web/placeholder_image.png'"/>
+        ${mediaHTML}
         <h2 class="name text">
-          <a href="${link}" target="_blank" class="link">${project.name} &nbsp; ↗</a>
+          ${nameHTML}
         </h2>
         <h2 class="work-title text">
           ${project.title}<span class="year"> , ${project.year}</span>
@@ -337,8 +352,16 @@ function init() {
         
   }else{
     let link = projectInfo[currPage].website || projectInfo[currPage].instagram;
-    designerName.innerHTML = projectInfo[currPage].name + " &nbsp; ↗";
-    designerName.href = link;
+    const isGroup = projectInfo[currPage].name.includes(',');
+    if (link && !isGroup) {
+      designerName.innerHTML = projectInfo[currPage].name + " &nbsp; ↗";
+      designerName.href = link;
+      designerName.style.pointerEvents = '';
+    } else {
+      designerName.innerHTML = projectInfo[currPage].name;
+      designerName.removeAttribute('href');
+      designerName.style.pointerEvents = 'none';
+    }
     title.childNodes[0].textContent = projectInfo[currPage].title;
     year.innerHTML = ", " + projectInfo[currPage].year;
     medium.innerHTML = projectInfo[currPage].medium + ", " + projectInfo[currPage].dimensions;
