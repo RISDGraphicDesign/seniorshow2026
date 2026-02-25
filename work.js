@@ -6,7 +6,8 @@ var page = document.querySelector("#page");
 let workCount = 165;
 let gap = 70;
 let isGrid = false;
-let readyForScroll = false;
+let readyForScroll = false; 
+let test = 0;
 function getThresholds() {
   const isMobile = window.innerWidth <= 600;
   return { top: isMobile ? 0.15 : 0.01, bottom: isMobile ? 0.001 : 0.001 };
