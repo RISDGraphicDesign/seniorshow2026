@@ -16,7 +16,7 @@
     <nav>
         <p class="text link"><a class="link" href='index.html'>Back to Home</a></p>
         <a class="link" href='index.html'><img id="icon" src="assets/fox-jumping.png" alt="gif of illustrated fox jumping over dog, printed texture" width="100%"/></a>
-        <p class="text link"><a class="link" href='#'>View as Grid</a></p>
+        <p class="text link" id="grid-toggle">View as Grid</p>
     </nav>
     <div class="text statement">
         <!-- <a class="link" href='index.html'><img src="assets/fox-jumping.png" alt="gif of illustrated fox jumping over dog, printed texture" width="100%"/></a> -->
@@ -35,34 +35,35 @@
     </div>
 
     <div id="work">
-        <div id="stack">
+        <div class="stack">
             <div id="page" class="page"></div>
         </div>
-
-        <div class="page-container hide-page">
-            <div class="page-content">
-            <svg class="link" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
-                <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
-            </svg>
-            <h2 class="name text">
-                <a class = "namelink" href="#" target="_blank" class="link">James Burgat &nbsp; ↗</a>
-            </h2>
-            <h2 class="work-title">
-                Title of Work
-                <span class="year text"> , 2025</span>
-            </h2>
-            <p class="work-details text">Medium, Dimensions</p>
-            <img class="work-image" src="assets/test-image.jpg" alt="" width="100%"/>
-            <video class="work-video" width="100%" autoplay loop muted playsinline style="display:none;"></video>
-            <p class="work-description text">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate.
-            </p>
-            </div>
+       
+         <div class="grid-hide" id="grid-container"></div>
+        
+    </div>
+    <div id = "the-page"class="page-container hide-page">
+        <div class="page-content">
+        
+        <h2 class="name text">
+            <a class = "namelink" href="#" target="_blank" class="link">James Burgat &nbsp; ↗</a>
+        </h2>
+        <h2 class="work-title">
+            Title of Work
+            <span class="year text"> , 2025</span>
+        </h2>
+        <p class="work-details text">Medium, Dimensions</p>
+        <img class="work-image" src="assets/test-image.jpg" alt="" width="100%"/>
+        <video class="work-video" width="100%" autoplay loop muted playsinline style="display:none;"></video>
+        <p class="work-description text">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate.
+        </p>
         </div>
     </div>
     <div id="credits" class="text grid">
         <p>Credits Placeholder</p>
     </div>
+    <div id="transition-overlay"></div>
     <script src="work.js"></script>
   </body>
 </html>
