@@ -268,7 +268,14 @@ function buildGrid() {
         <p class="work-description text">${project.description}</p>
       </div>
     `;
-    const colIdx = numCols === 1 ? 0 : idx % numCols;
+    let colIdx = 0;
+    if (numCols > 1) {
+      const col1End = chunkSize - 3;
+      const col2End = col1End + chunkSize;
+      if (idx < col1End) colIdx = 0;
+      else if (idx < col2End) colIdx = 1;
+      else colIdx = 2;
+    }
     cols[colIdx].appendChild(card);
   });
 }
