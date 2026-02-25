@@ -13,12 +13,13 @@
   </head>
 
   <body>
-    <!-- <div class="text-top">
-      <p class="subtitle">RISD GRAPHIC DESIGN SENIOR SHOW</p>
-      <p class="title title-top"><span class="letter-static" data-char="T">T</span><span class="letter-static" data-char="H">H</span><span class="letter-static" data-char="E">E</span><span class="space"> </span><span class="letter-static" data-char="Q">Q</span><span class="letter-static" data-char="U">U</span><span class="letter-static" data-char="I">I</span><span class="letter-static" data-char="C">C</span><span class="letter-static" data-char="K">K</span><span class="space"> </span><span class="letter-static" data-char="B">B</span><span class="letter-static" data-char="R">R</span><span class="letter-static" data-char="O">O</span><span class="letter-static" data-char="W">W</span><span class="letter-static" data-char="N">N</span><span class="space"> </span><span class="letter-static" data-char="F">F</span><span class="letter-static" data-char="O">O</span><span class="letter-static" data-char="X">X</span></p>
-    </div> -->
-    <p class="text link back"><a class="link" href='index.html'>Back to Home</a></p>
+    <nav>
+        <p class="text link"><a class="link" href='index.html'>Back to Home</a></p>
+        <img id="icon" src="assets/fox-jumping.png" alt="gif of illustrated fox jumping over dog, printed texture" width="100%"/>
+        <p class="text link" id="grid-toggle">View as Grid</p>
+    </nav>
     <div class="text statement">
+        <!-- <a class="link" href='index.html'><img src="assets/fox-jumping.png" alt="gif of illustrated fox jumping over dog, printed texture" width="100%"/></a> -->
         <p>
         “The quick brown fox jumps over the lazy dog” is a pangram, a phrase that contains every letter in the alphabet. As graphic designers, we see this phrase repeated over and over. It’s used to quickly experiment with a range of typefaces before making the final selection, a design decision that has a major impact on the look and feel of a project.
         </p>
@@ -32,37 +33,102 @@
         We, the RISD Graphic Design class of 2026, as individual letters, come together to form one alphabet, while still embracing the wild variety in our work. 
         </p>
     </div>
-  
-    <!-- <div class="text-bottom">
-      <p class="title title-bottom"><span class="letter-static" data-char="J">J</span><span class="letter-static" data-char="U">U</span><span class="letter-static" data-char="M">M</span><span class="letter-static" data-char="P">P</span><span class="letter-static" data-char="S">S</span><span class="space"> </span><span class="letter-static" data-char="O">O</span><span class="letter-static" data-char="V">V</span><span class="letter-static" data-char="E">E</span><span class="letter-static" data-char="R">R</span><span class="space"> </span><span class="letter-static" data-char="T">T</span><span class="letter-static" data-char="H">H</span><span class="letter-static" data-char="E">E</span><span class="space"> </span><span class="letter-static" data-char="L">L</span><span class="letter-static" data-char="A">A</span><span class="letter-static" data-char="Z">Z</span><span class="letter-static" data-char="Y">Y</span><span class="space"> </span><span class="letter-static" data-char="D">D</span><span class="letter-static" data-char="O">O</span><span class="letter-static" data-char="G">G</span></p>
-      <p class="subtitle">OPENING FEBRUARY 26, 6–7:30PM, WOODS-GERRY GALLERY</p>
-    </div> -->
 
-    <!-- <div id="work">
-      <div id="page" class="page">
-        <img src="assets/test-image.jpg" alt="" width="100%"/>
-      </div>
-      <div class="page-container">
-        <div class="page-content">
-          <svg class="link" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
-            <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
-          </svg>
-          <h2 class="name text">
-            <a href="#" target="_blank" class="link">James Burgat &nbsp; ↗</a>
-          </h2>
-          <h2 class="work-title">
-            Title of Work
-            <span class="year text"> , 2025</span>
-          </h2>
-          <p class="work-details text">Medium, Dimensions</p>
-          <img src="assets/test-image.jpg" alt="" width="100%"/>
-          <p class="work-description text">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate.
-          </p>
+    <div id="work">
+        <div class="stack">
+            <div id="page" class="page"></div>
         </div>
-      </div> -->
+       
+         <div class="grid-hide" id="grid-container"></div>
+        
     </div>
-    <!-- <script src="game.js"></script> -->
-    <script src="index.js"></script>
+    <div id = "the-page"class="page-container hide-page">
+        <div class="page-content">
+        <img class="work-image" src="" alt="" width="100%"/>
+        <video class="work-video" width="100%" autoplay loop muted playsinline style="display:none;"></video>
+        <h2 class="name text">
+            <a class = "namelink link" href="#" target="_blank">James Burgat &nbsp; ↗</a>
+        </h2>
+        <h2 class="work-title text">
+            Title of Work
+            <span class="year"> , 2025</span>
+        </h2>
+        <p class="work-details text">Medium, Dimensions</p>
+        <p class="work-description text">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate.
+        </p>
+        </div>
+    </div>
+     <div id="credits" class="text grid">
+        <div class="span-2">
+            <h3>Our Team</h3>
+            <div class="grid-2">
+                <div class="span-2">
+                    <h4>CORE LOGISTICS</h4>
+                    <p>
+                        James Burgat<br>
+                        Ella Goodman<br>
+                        Emily Gray Hook<br>
+                    </p>
+                    <h4>WEB</h4>
+                    <p>
+                        Janice Lee<br>
+                        Xandi Pink<br>
+                        Maggie Xian<br>
+                        Renee Zhu<br>
+                    </p>
+
+                    <h4>CURATION</h4>
+                    <p>
+                        Henie Cho<br>
+                        Joanna Yeonjin Cho<br>
+                        Natalie Ho<br>
+                        Kay Kim<br>
+                        Seoyeon Kweon<br>
+                        Grace Liu<br>
+                        Ryan Scott<br>
+                    </p>
+                </div> 
+                <div class="span-2">
+                    <h4>GALLERY ENVIRONMENT</h4>
+                    <p>
+                        Willow Baker<br>
+                        Allie Heffner<br>
+                        Katie Gyuwon Hwang<br>
+                        Hyunmin Kim<br>
+                        Nadine Macapagal<br>
+                        Neat Nada Rodanant<br>
+                        Yoomin Shin<br>
+                        Kristen Sun<br>
+                        Chahak Surana<br>
+                    </p>
+                    <h4>MARKETING</h4>
+                    <p>
+                        Ashley Ha<br>
+                        Kira Karafotas<br>
+                        Chelsea Liu<br>
+                        Rafael Mediodia<br>
+                        Izana Nordhaus<br>
+                        Anaïs Reiss<br>
+                        Ameer Tarawneh<br>
+                        Marie You<br>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="span-2">
+            <h3>Special Thanks</h3>
+            <p>
+                Thank you to every student who contributed work, the amazing Graphic Design Faculty who supported us during our time at RISD, especially Kathy Wu and Emily Rye who advised this show, the friends and classmates who made the late work nights and early morning crits less painful, Graphic Design Typeshop technicians, Ed Brown and Julia Gualtieri, who helped us print and order everything that made this show possible, and our loved ones for their unconditional support.
+            </p>
+        </div>
+    </div>
+    <div class="footer">
+        <a class="link" href="#"><p class="text">Back to Top</p></a>
+    </div>
+    <div id="transition-overlay"></div>
+    
+    <script src="work.js"></script>
+    
   </body>
 </html>

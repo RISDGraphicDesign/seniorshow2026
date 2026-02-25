@@ -11,8 +11,11 @@ window.addEventListener("resize", () => {
 }); */
 
 
+
 // initiate game
 window.addEventListener('DOMContentLoaded', function() {
+
+
     let play = document.querySelector("#play");
     let playMobile = document.querySelector("#play-mobile");
 
@@ -47,3 +50,4 @@ window.addEventListener('DOMContentLoaded', function() {
     }
 
 });
+
