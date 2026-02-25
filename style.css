@@ -426,6 +426,7 @@ nav {
 
   #grid-container {
     flex-direction: column;
+    padding: 1.5rem;
   }
 
   .page-container .page-content {
