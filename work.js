@@ -7,7 +7,10 @@ let workCount = 165;
 let gap = 70;
 let isGrid = false;
 let readyForScroll = false;
-let BOTTOM_BUFFER = 0.001; // fraction of stack scroll to hide hover page before credits (0 = exact edge, higher = earlier)
+function getThresholds() {
+  const isMobile = window.innerWidth <= 600;
+  return { top: isMobile ? 0.15 : 0.01, bottom: isMobile ? 0.001 : 0.001 };
+}
 let hoverpage = document.querySelector("#the-page");
 let currPage = 0;
 // stack.style.height = workCount * gap + 200 + "px";
@@ -37,13 +40,14 @@ function handleScroll() {
     let docHeight = document.body.scrollHeight - window.innerHeight - bottomSpace;
     scrollFraction = Math.min(scrollY / docHeight, 1);
 
-    if (scrollFraction < 0.05 || scrollFraction >= 1 - BOTTOM_BUFFER) {
+    const { top, bottom } = getThresholds();
+    if (scrollFraction < top || scrollFraction >= 1 - bottom) {
         pages.forEach(page => page.classList.remove('page-selected'));
         hoverpage.classList.add('hide-page');
         return;
     }
 
-    let adjustedFraction = (scrollFraction - 0.05) / 0.95;
+    let adjustedFraction = (scrollFraction - top) / (1 - top - bottom);
     let selectedIndex = Math.min(Math.floor(adjustedFraction * pages.length), pages.length - 1);
     
 
@@ -70,7 +74,8 @@ pages.forEach((page, index) => {
         let footerEl = document.querySelector('.footer');
         let bottomSpace = (creditsEl ? creditsEl.offsetHeight : 0) + (footerEl ? footerEl.offsetHeight : 0);
         let docHeight = document.body.scrollHeight - window.innerHeight - bottomSpace;
-     let targetScroll = (0.05 + ((index + 0.5) / pages.length) * 0.95) * docHeight;
+     const { top, bottom } = getThresholds();
+     let targetScroll = (top + ((index + 0.5) / pages.length) * (1 - top - bottom)) * docHeight;
         window.scrollTo({ top: targetScroll, behavior: 'smooth' });
     });
 });
