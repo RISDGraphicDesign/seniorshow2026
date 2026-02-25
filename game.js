@@ -471,6 +471,7 @@ function updateBgLetters() {
   // Update and draw letters
   textFont(sundayMasthead);
   textAlign(CENTER, CENTER);
+  noStroke();
   
   for (let char in bgLetters) {
     let l = bgLetters[char];
