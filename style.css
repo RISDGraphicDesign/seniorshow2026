@@ -152,7 +152,7 @@ h3, p, .page-content > img, .page-content > svg, .grid-content > img, .grid-cont
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 90vh;
   width: 100%;
 }
 
