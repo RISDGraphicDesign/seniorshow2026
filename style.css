@@ -310,6 +310,10 @@ nav {
   font-size: 1rem;
 }
 
+.work-title {
+  font-weight: 400;
+}
+
 .work-description {
   font-size: 0.8rem;
 }
@@ -372,7 +376,7 @@ nav {
 .grid-page-container {
   width: 100%;
   background-color: var(--background-color);
-  padding: 1rem;
+  padding: 1.5rem;
   border: 1px var(--text-color) solid;
 }
 
@@ -384,7 +388,7 @@ nav {
   }
 
   .title {
-    font-size: 3rem;
+    font-size: 3.5rem;
   }
 
   .text-center {
@@ -430,10 +434,6 @@ nav {
 
   .page-container .page-content {
     width: 85%;
-  }
-
-  .page-content, .grid-content {
-    padding: 1rem 1rem 0 1rem;
   }
 
 }
