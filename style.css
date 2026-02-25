@@ -424,12 +424,8 @@ nav {
     flex-direction: column;
   }
 
-  .grid, .grid-2 {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .span-2 {
-    grid-column: span 1;
+  .grid {
+    grid-template-columns: repeat(1, 1fr);
   }
 
   .page-container .page-content {
