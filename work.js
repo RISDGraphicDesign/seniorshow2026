@@ -243,6 +243,12 @@ function buildGrid() {
     cols.push(col);
   }
 
+ const lastName = name => {
+  const first = name.split(',')[0].trim();
+  return first.split(/\s+/).pop().toLowerCase();
+};
+  projectInfoSorted.sort((a, b) => lastName(a.name).localeCompare(lastName(b.name)));
+
   const chunkSize = Math.ceil(projectInfoSorted.length / numCols);
 
   projectInfoSorted.forEach((project, idx) => {
@@ -276,8 +282,8 @@ function buildGrid() {
     `;
     let colIdx = 0;
     if (numCols > 1) {
-      const col1End = chunkSize - 3;
-      const col2End = col1End + chunkSize;
+      const col1End = chunkSize;
+      const col2End = col1End + chunkSize + 2;
       if (idx < col1End) colIdx = 0;
       else if (idx < col2End) colIdx = 1;
       else colIdx = 2;
