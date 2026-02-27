@@ -771,7 +771,7 @@
     "title": "Ain’t I a woman",
     "source": "documentation",
     "files": [
-        "web/ConstanceBedford_Work1.webp"
+      "web/ConstanceBedford_Work1.webp"
     ],
     "medium": "Multi-Media",
     "dimensions": "Mixed Dimensions",
@@ -1046,7 +1046,6 @@
     "year": "2025",
     "description": "Image transfer and gesso on wood"
   },
-
   {
     "email": "hcho11@risd.edu",
     "name": "Henie Hyewon Cho",
@@ -1257,7 +1256,7 @@
     "title": "Form In Motion",
     "source": "documentation",
     "files": [
-        "web/IzanaNordhaus_Work4.mp4"
+      "web/IzanaNordhaus_Work4.mp4"
     ],
     "medium": "Video",
     "dimensions": "1920px × 1080px",
@@ -1637,7 +1636,7 @@
   },
   {
     "email": "gkim16@risd.edu",
-    "name": "Kay Kim",
+    "name": "Kay Kim, Janice Lee, Rachel Shin",
     "pronouns": "she/her",
     "instagram": "",
     "website": "https://kaykim.me",
@@ -1800,7 +1799,7 @@
     "title": "Digital Space",
     "source": "documentation",
     "files": [
-        "web/KristenSun_Work1.mp4"
+      "web/KristenSun_Work1.mp4"
     ],
     "medium": "Video",
     "dimensions": "Varied",
@@ -1889,7 +1888,7 @@
     "title": "Aesthetic Conversations",
     "source": "documentation",
     "files": [
-        "web/MarieYou_Work3.webp"
+      "web/MarieYou_Work3.webp"
     ],
     "medium": "Book",
     "dimensions": "5.25\" × 7.75\"",
@@ -1923,7 +1922,7 @@
     "title": "Thoroughfare [I], [II], [III]",
     "source": "documentation",
     "files": [
-        "web/MarieYou_Work6.mp4"
+      "web/MarieYou_Work6.mp4"
     ],
     "medium": "Multi-Media",
     "dimensions": "Mixed Dimensions",
@@ -2425,7 +2424,9 @@
     "work_number": "Work #5",
     "title": "24FPS",
     "source": "documentation",
-    "files": ["web/RafaelMediodia_Work5_0.webp"],
+    "files": [
+      "web/RafaelMediodia_Work5_0.webp"
+    ],
     "medium": "Sculpture",
     "dimensions": "14\" × 6\"",
     "year": "2025",
@@ -2441,7 +2442,7 @@
     "title": "Plus One",
     "source": "documentation",
     "files": [
-        "web/RafaelMediodia_Work6.mp4"
+      "web/RafaelMediodia_Work6.mp4"
     ],
     "medium": "Brand Identity",
     "dimensions": "18\" × 24\"",
@@ -2494,7 +2495,9 @@
     "work_number": "Work #8",
     "title": "Gummy Words",
     "source": "documentation",
-    "files": ["web/RafaelMediodia_Work8_0.webp"],
+    "files": [
+      "web/RafaelMediodia_Work8_0.webp"
+    ],
     "medium": "Sculpture",
     "dimensions": "7\" × 12\"",
     "year": "2025",
@@ -2509,7 +2512,9 @@
     "work_number": "Work #9",
     "title": "Input:Output",
     "source": "documentation",
-    "files": ["web/RafaelMediodia_Work9.webp"],
+    "files": [
+      "web/RafaelMediodia_Work9.webp"
+    ],
     "medium": "Multi-Media",
     "dimensions": "24\" × 36\"",
     "year": "2025",
@@ -2926,5 +2931,158 @@
     "dimensions": "5\" × 8\"",
     "year": "2024-26",
     "description": "An ongoing attempt to collect a selection of my work in poetry from the past five years into a book. Its contents are varied and rather personal, including reflections on individual growth, interpersonal connections, and spiritual beliefs as they all oscillate back and forth."
+  },
+  {
+    "email": "cbenford@risd.edu",
+    "name": "Constance Benford",
+    "pronouns": "she/her",
+    "instagram": "",
+    "website": "https://www.connistudio.com",
+    "work_number": "Work #2",
+    "title": "Desk Notes",
+    "source": "",
+    "files": [],
+    "medium": "Book",
+    "dimensions": "Varied",
+    "year": "2024",
+    "description": ""
+  },
+  {
+    "email": "",
+    "name": "James Burgat",
+    "pronouns": "",
+    "instagram": "https://instagram.com/james.burgat",
+    "website": "https://jamesburgat.com",
+    "work_number": "",
+    "title": "Merde! (Shit!)",
+    "source": "",
+    "files": [],
+    "medium": "Linocut",
+    "dimensions": "Varied",
+    "year": "2025",
+    "description": ""
+  },
+  {
+    "email": "",
+    "name": "James Burgat",
+    "pronouns": "",
+    "instagram": "https://instagram.com/james.burgat",
+    "website": "https://jamesburgat.com",
+    "work_number": "",
+    "title": "An Interview with Johannes Breyer",
+    "source": "",
+    "files": [],
+    "medium": "Newspaper",
+    "dimensions": "Varied",
+    "year": "2025",
+    "description": ""
+  },
+  {
+    "email": "",
+    "name": "James Burgat",
+    "pronouns": "",
+    "instagram": "https://instagram.com/james.burgat",
+    "website": "https://jamesburgat.com",
+    "work_number": "",
+    "title": "An Homage to Margaret Calvert",
+    "source": "",
+    "files": [],
+    "medium": "Polymer Plate Print",
+    "dimensions": "Varied",
+    "year": "2025",
+    "description": ""
+  },
+  {
+    "email": "hcho11@risd.edu",
+    "name": "Henie Hyewon Cho",
+    "pronouns": "she/her",
+    "instagram": "https://instagram.com/henie.jpg",
+    "website": "",
+    "work_number": "Work #4",
+    "title": "We Grieve, We Love",
+    "source": "documentation",
+    "files": [
+      "web/HenieHyewonCho_Work4_1.webp",
+      "web/HenieHyewonCho_Work4_2.webp"
+    ],
+    "medium": "Poster",
+    "dimensions": "Varied",
+    "year": "2023",
+    "description": ""
+  },
+  {
+    "email": "",
+    "name": "James Burgat",
+    "pronouns": "",
+    "instagram": "https://instagram.com/james.burgat",
+    "website": "https://jamesburgat.com",
+    "work_number": "",
+    "title": "Tu Me Manques",
+    "source": "",
+    "files": [],
+    "medium": "Quilt",
+    "dimensions": "Varied",
+    "year": "2024",
+    "description": ""
+  },
+  {
+    "email": "",
+    "name": "James Burgat",
+    "pronouns": "",
+    "instagram": "https://instagram.com/james.burgat",
+    "website": "https://jamesburgat.com",
+    "work_number": "",
+    "title": "Stop?",
+    "source": "",
+    "files": [],
+    "medium": "Installation",
+    "dimensions": "Varied",
+    "year": "2024",
+    "description": ""
+  },
+  {
+    "email": "",
+    "name": "James Burgat",
+    "pronouns": "",
+    "instagram": "https://instagram.com/james.burgat",
+    "website": "https://jamesburgat.com",
+    "work_number": "",
+    "title": "RISO Color Separation",
+    "source": "",
+    "files": [],
+    "medium": "Riso Print",
+    "dimensions": "Varied",
+    "year": "2025",
+    "description": ""
+  },
+  {
+    "email": "",
+    "name": "James Burgat",
+    "pronouns": "",
+    "instagram": "https://instagram.com/james.burgat",
+    "website": "https://jamesburgat.com",
+    "work_number": "",
+    "title": "My Journey Through Graphic Design",
+    "source": "",
+    "files": [],
+    "medium": "Riso Print",
+    "dimensions": "Varied",
+    "year": "2026",
+    "description": ""
+  },
+  {
+    "email": "",
+    "name": "James Burgat",
+    "pronouns": "",
+    "instagram": "https://instagram.com/james.burgat",
+    "website": "https://jamesburgat.com",
+    "work_number": "",
+    "title": "Community Sticker Printer",
+    "source": "",
+    "files": [],
+    "medium": "Thermal Printer",
+    "dimensions": "Varied",
+    "year": "2025",
+    "description": ""
   }
 ]
